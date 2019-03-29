@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './index.less'
 class Footer extends React.Component {
   constructor (props) {
     super(props)
@@ -10,8 +10,8 @@ class Footer extends React.Component {
 
   render () {
     return (
-      <div>
-        Footer!!
+      <div className="footer">
+        版权信息版权信息版权信息版权信息版权信息版权信息版权信息版权信息
       </div>
     )
   }

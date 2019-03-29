@@ -49,8 +49,8 @@ class Header extends React.Component {
             <a href="#">退出</a>
           </Col>
         </Row>
-        <Row >
-          <Col span={4}>
+        <Row className="breadcrumb">
+          <Col span={4} className="">
             首页
           </Col>
           <Col span={20}>

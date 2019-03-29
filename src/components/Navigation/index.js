@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu, Icon } from 'antd';
 import './index.less'
 import MenuList from './../../resources/menuList.js'
+import {NavLink} from 'react-router-dom'
 const SubMenu = Menu.SubMenu;
 class Navigation extends React.Component {
   constructor (props) {
@@ -26,10 +27,10 @@ class Navigation extends React.Component {
             { this.rendMenu(item.children)}
           </SubMenu>
         )
-      } else {
-        return <Menu.Item key={item.key}>{item.title}</Menu.Item>
-
       }
+        return <Menu.Item key={item.key}><NavLink to={item.key}>{item.title}</NavLink></Menu.Item>
+
+
     })
   }
 

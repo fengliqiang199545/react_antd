@@ -4,7 +4,8 @@ import 'antd/dist/antd.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
-import './resources/asset/style/common.less'
+import './style/common.less'
+import Home from './pages/home'
 class Admin extends React.Component {
   constructor (props) {
     super(props)
@@ -23,7 +24,9 @@ class Admin extends React.Component {
           <Header>
 
           </Header>
-          <Row className="content"> Content!!</Row>
+          <Row className="content">
+              {this.props.children}
+          </Row>
           <Footer>
 
           </Footer>

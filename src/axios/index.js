@@ -6,9 +6,9 @@ export default class Axios {
         param:'callback'
       },function (err, data) {
         //to-do
-        debugger;
+
         if (data.status == "1"){
-          debugger;
+
           resolve(data);
         } else {
           reject(data.info);
