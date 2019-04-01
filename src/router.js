@@ -6,6 +6,11 @@ import Login from './pages/Login'
 import NoMatch from './pages/noMatchDemo/NoMatch'
 import Buttons from './components/Buttons'
 import Home from './pages/home'
+import Modals from './components/Modal'
+import SpinExp from './components/Spins'
+import NotificationExp from './components/Notification'
+import Messages from './components/message'
+import Tab from './components/Tabs'
 class RouterExp extends React.Component {
   constructor (props) {
     super(props)
@@ -24,7 +29,11 @@ class RouterExp extends React.Component {
             <Admin>
               <Switch>
               <Route path="/admin/ui/buttons" component={Buttons}/>
-
+              <Route path="/ui/modals" component={Modals}/>
+              <Route path="/ui/loadings" component={SpinExp}/>
+              <Route path="/ui/notification" component={NotificationExp}/>
+              <Route path="/ui/messages" component={Messages}/>
+              <Route path="/ui/tabs" component={Tab}/>
               </Switch>
             </Admin>
           }/>
