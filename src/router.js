@@ -11,6 +11,10 @@ import SpinExp from './components/Spins'
 import NotificationExp from './components/Notification'
 import Messages from './components/message'
 import Tab from './components/Tabs'
+import TableExp from './components/Table'
+import CaroutselExp from './components/Carousel'
+import LoginForm from './components/Form/Login2'
+import RegisterForm from './components/Form/Register'
 class RouterExp extends React.Component {
   constructor (props) {
     super(props)
@@ -34,6 +38,10 @@ class RouterExp extends React.Component {
               <Route path="/ui/notification" component={NotificationExp}/>
               <Route path="/ui/messages" component={Messages}/>
               <Route path="/ui/tabs" component={Tab}/>
+              <Route path="/ui/carousel" component={CaroutselExp}/>
+              <Route path="/form/login" component={LoginForm}/>
+              <Route path="/table/basic" component={TableExp}/>
+              <Route path='/form/reg' component={RegisterForm}/>
               </Switch>
             </Admin>
           }/>
