@@ -15,6 +15,8 @@ import TableExp from './components/Table'
 import CaroutselExp from './components/Carousel'
 import LoginForm from './components/Form/Login2'
 import RegisterForm from './components/Form/Register'
+import ProTable from './components/proTable'
+import Order from './components/Order'
 class RouterExp extends React.Component {
   constructor (props) {
     super(props)
@@ -42,6 +44,8 @@ class RouterExp extends React.Component {
               <Route path="/form/login" component={LoginForm}/>
               <Route path="/table/basic" component={TableExp}/>
               <Route path='/form/reg' component={RegisterForm}/>
+              <Route path='/table/high' component={ProTable}/>
+              <Route path='/order' component={Order}/>
               </Switch>
             </Admin>
           }/>

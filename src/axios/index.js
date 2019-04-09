@@ -31,7 +31,7 @@ export default class Axios {
         method: 'get',
         baseURL:"https://easy-mock.com/mock/5ca55b7ddcc23b30ca628b76/tableList/",
         timeout: 3000,
-        param: (options.data && options.data.params) || ''
+        params: (options.data && options.data.params) || ''
       }).then((respose)=>{
         if (options.data && options.data.isShowLoading !== false ) {
           loading = document.getElementById('ajaxLoading')

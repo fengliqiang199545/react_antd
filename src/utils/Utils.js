@@ -9,7 +9,7 @@ export default {
   },
 
   pagination(data,callback){
-    let page = {
+    return  {
       onChange: (current)=>{
         callback(current);
       },
@@ -21,7 +21,5 @@ export default {
       },
       showQuickJumper:true
     }
-
-    return page;
   }
 }

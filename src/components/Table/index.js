@@ -118,6 +118,9 @@ class TableExp extends React.Component {
 
   }
 
+  params ={
+    page:1
+  }
   onRowClick=(record,index)=>{
     let selectKey = [index];
     this.setState({
@@ -188,7 +191,7 @@ class TableExp extends React.Component {
             <Button onClick={this.handleDelete}>Delete</Button>
           </div>
           <Table rowSelection={rowCheckedSelectConfig}
-              pagination={Utils.pagination()}
+                 pagination={this.state.pagination}
                  dataSource={this.state.data} columns={columns}/>
         </Card>
       </div>
@@ -212,24 +215,39 @@ class TableExp extends React.Component {
       }
     })
   }
-  componentDidMount () {
+
+  request=()=>{
     let baseURL = 'https://easy-mock.com/mock/5ca55b7ddcc23b30ca628b76/tableList/';
     axios.ajax( {
       url: 'getAll',
       data:{
-        param:{
-
+        params:{
+          page:this.params.page
         }
       },
-      status:''
+     // status:''
       // isShowLoading: false
     }).then((res)=>{
-      console.log(JSON.stringify(res))
+      let _this = this;
+      console.log(JSON.stringify(res));
+      if (res.code == 0){
+        res.result.list.map((item,index)=>{
+          item.key = index;
+        })
+      }
       this.setState({
-        data: res.result
+        data: res.result.list,
+        pagination:Utils.pagination(res,(current)=>{
+
+          _this.params.page = current;
+          this.request();
+        })
       })
 
     })
+  }
+  componentDidMount () {
+    this.request();
   }
 
 
